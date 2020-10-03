@@ -26,7 +26,7 @@ namespace TesteWeb.Models
         [Column("Email")]
         public string Email { get; set; }
 
-        [Display(Name = "DataNascimento")]
+        [Display(Name = "Data Nascimento")]
         [Column("DataNascimento")]
         public string DataNascimento { get; set; }
 

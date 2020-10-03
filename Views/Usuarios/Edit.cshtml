@@ -1,12 +1,10 @@
 ﻿@model TesteWeb.Models.Usuarios
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editando Usuário";
 }
 
-<h1>Edit</h1>
-
-<h4>Usuarios</h4>
+<h1>Informações do Usuário</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -41,7 +39,9 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <form asp-action="Edit">
+        <input asp-action="Index" type="submit" value="Voltar para Lista de Usuários" class="btn btn-light" />
+    </form>
 </div>
 
 @section Scripts {

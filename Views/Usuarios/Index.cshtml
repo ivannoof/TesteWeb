@@ -1,14 +1,10 @@
 ﻿@model IEnumerable<TesteWeb.Models.Usuarios>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Usuários";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h1>Lista Usuários</h1>
 <table class="table">
     <thead>
         <tr>
@@ -28,26 +24,32 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Celular)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="dropdown-item text-dark" >Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="dropdown-item text-dark" >Info</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="dropdown-item text-danger" >Deletar</a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
